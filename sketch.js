@@ -4,6 +4,7 @@ let resultP;
 let leftDiv;
 let counter;
 let cnv, myRec, btn, txt;
+let img;
 
 function setup() {
     // her beder jeg browseren om at genkende lydinput.
@@ -14,6 +15,8 @@ function setup() {
         window.SpeechRecognition;
 
     cnv = createCanvas(400, 600);
+
+    img = loadImage('assets/demon.png');
     background('red');
     txt = createElement("h5", "Say something..")
         .position(40, 200)
@@ -40,7 +43,9 @@ function setup() {
     }
 }
 
-function draw() {}
+function draw() {
+    Image(img, 0, 0);
+}
 
 function showResult() {
     if (myRec.resultValue == true) {
