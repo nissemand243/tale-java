@@ -7,6 +7,7 @@ let counter;
 let cnv, myRec, btn, txt;
 
 function setup() {
+    // her beder jeg browseren om at genkende lydinput.
     let SpeechRecognition = window.webkitSpeechRecognition ||
         window.mozSpeechRecognition ||
         window.msSpeechRecognition ||
