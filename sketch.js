@@ -5,6 +5,7 @@ let leftDiv;
 let counter;
 let cnv, myRec, btn, txt;
 let img;
+let imageHolder;
 
 function setup() {
 
@@ -39,6 +40,7 @@ function setup() {
                 myRec = new p5.SpeechRec();
                 myRec.continuous = true;
                 myRec.interimResults = true;
+                myRec.defaultLanguage("da-DK");
                 myRec.onResult = showResult;
                 myRec.start();
             });
@@ -46,7 +48,7 @@ function setup() {
 }
 
 function draw() {
-    Image(img, 0, height / 2, img.width / 2, img.height / 2);//Kalder billedet
+    
 }
 
 function showResult() {
@@ -54,7 +56,8 @@ function showResult() {
         sentence = myRec.resultString;
         resultP.html(sentence);
 
-        if (sentence.includes("orange")) {}
-
+        if (sentence.includes("billede")) {
+            imageHolder = image(img, width / 2, height / 2);//Kalder billedet
+        }
     }
 }
