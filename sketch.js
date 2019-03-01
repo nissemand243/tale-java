@@ -7,6 +7,9 @@ let cnv, myRec, btn, txt;
 let img;
 
 function setup() {
+
+    img = loadImage('assets/demon.png');//Henter billedet fra mappen
+
     // her beder jeg browseren om at genkende lydinput.
     let SpeechRecognition = window.webkitSpeechRecognition ||
         window.mozSpeechRecognition ||
@@ -16,7 +19,6 @@ function setup() {
 
     cnv = createCanvas(400, 600);
 
-    img = loadImage('assets/demon.png');
     background('red');
     txt = createElement("h5", "Say something..")
         .position(40, 200)
@@ -44,7 +46,7 @@ function setup() {
 }
 
 function draw() {
-    Image(img, 0, 0);
+    Image(img, 0, height / 2, img.width / 2, img.height / 2);//Kalder billedet
 }
 
 function showResult() {
